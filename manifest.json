@@ -1,0 +1,23 @@
+{
+    "name": "Peminjaman Alat Syuting TVRI",
+    "short_name": "Pinjam Alat",
+    "description": "Aplikasi Peminjaman Alat Syuting TVRI untuk mempermudah proses peminjaman peralatan syuting televisi.",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#000",
+    "icons": [
+      {
+        "src": "images/logo_144x144.png",
+        "sizes": "144x144",
+        "type": "image/png",
+        "purpose": "any"
+      },
+      {
+        "src": "images/logo_512x512.png",
+        "sizes": "512x512",
+        "type": "image/png",
+        "purpose": "maskable"
+      }
+    ]
+  }
