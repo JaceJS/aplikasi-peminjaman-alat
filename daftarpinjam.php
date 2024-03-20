@@ -51,9 +51,9 @@ $role = $_SESSION['role'];
                         <tbody>
                             <?php
                             $counter = 1;
-                            foreach ($_SESSION['cart'] as $item) {
-                                $id_brg = $item['id_brg'];
-                                $result = $mysqli->query("SELECT stok_brg, kode FROM barang WHERE id_brg = $id_brg");
+                            foreach ($_SESSION['cart'] as $session_item) {
+                                $id_brg = $session_item['id_brg'];
+                                $result = $mysqli->query("SELECT stok_brg FROM barang WHERE id_brg = $id_brg");
 
                                 if ($result) {
                                     $row = $result->fetch_assoc();
@@ -67,14 +67,14 @@ $role = $_SESSION['role'];
                             ?>
                                 <tr>
                                     <th scope="row"><?php echo $counter++; ?></th>
-                                    <td><?php echo $item['kode']; ?></td>
-                                    <td><?php echo $item['nama_brg']; ?></td>
+                                    <td><?php echo $session_item['kode']; ?></td>
+                                    <td><?php echo $session_item['nama_brg']; ?></td>
                                     <td class="input-group">
                                         <div class="d-flex align-items-center">
-                                            <input type="hidden" name="id_brg[]" value="<?php echo $item['id_brg']; ?>">
-                                            <input class="form-control" style="min-width:100px; border-radius: 4px 0 0 4px;" type="number" id="quantity_<?php echo $item['id_brg']; ?>" name="quantity[]" value="<?php echo $item['kuantitas']; ?>" min="1" max="<?php echo $max_quantity; ?>" readonly>
-                                            <button class="btn btn-outline-danger" style="border-radius: 0;" type="button" onclick="decrementQuantity('<?php echo $item['id_brg']; ?>')">-</button>
-                                            <button class="btn btn-outline-primary" style="border-radius: 0 4px 4px 0;" type="button" onclick="incrementQuantity('<?php echo $item['id_brg']; ?>')">+</button>
+                                            <input type="hidden" name="id_brg[]" value="<?php echo $session_item['id_brg']; ?>">
+                                            <input class="form-control" style="min-width:100px; border-radius: 4px 0 0 4px;" type="number" id="quantity_<?php echo $session_item['id_brg']; ?>" name="quantity[]" value="<?php echo $session_item['kuantitas']; ?>" min="1" max="<?php echo $max_quantity; ?>" readonly>
+                                            <button class="btn btn-outline-danger" style="border-radius: 0;" type="button" onclick="decrementQuantity('<?php echo $session_item['id_brg']; ?>')">-</button>
+                                            <button class="btn btn-outline-primary" style="border-radius: 0 4px 4px 0;" type="button" onclick="incrementQuantity('<?php echo $session_item['id_brg']; ?>')">+</button>
                                         </div>
                                     </td>
                                     <td>
@@ -83,7 +83,7 @@ $role = $_SESSION['role'];
                                         </div>
                                     </td>
                                     <td>
-                                        <a href="hapuscart.php?id_brg=<?php echo $item['id_brg']; ?>" class="btn btn-danger" onclick="removeItem(<?php echo $item['id_brg']; ?>)">Hapus</a>
+                                        <a href="hapuscart.php?id_brg=<?php echo $session_item['id_brg']; ?>" class="btn btn-danger" onclick="removeItem(<?php echo $session_item['id_brg']; ?>)">Hapus</a>
                                     </td>
                                 </tr>
                             <?php

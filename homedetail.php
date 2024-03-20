@@ -41,7 +41,7 @@ $role = $_SESSION['role'];
         <div class="row">
             <?php
             $id_brg = $_GET['id_jenis'];
-            
+
             $sql = $mysqli->query("SELECT * FROM barang 
             LEFT JOIN jenis_barang 
             ON barang.jenis_brg = jenis_barang.id_jenis 
@@ -59,16 +59,17 @@ $role = $_SESSION['role'];
                             <div class="card-body">
                                 <h5 class="card-title"><?php echo $row_alat['nama_brg']; ?></h5>
                                 <p class="card-text">Stok: <?php echo $row_alat['stok_brg']; ?></p>
-                                <?php if ($role == 'anggota') : ?>
+                                <?php if ($role == 'anggota' && $row_alat['stok_brg'] > 0) :
+                                ?>
                                     <div class="input-group mb-3">
                                         <span class="input-group-text">Jumlah :</span>
-                                        <input type="number" name="kuantitas" value="1" min="1" max="<?php echo $row_alat['stok_brg']; ?>" class="form-control bg-light" id="quantity_<?php echo $row_alat['id_brg']; ?>" readonly>
+                                        <input type="number" name="kuantitas" value="0" min="0" max="<?php echo $row_alat['stok_brg']; ?>" class="form-control bg-light" id="quantity_<?php echo $row_alat['id_brg']; ?>" readonly>
                                         <button class="btn btn-outline-danger" type="button" onclick="decrementQuantity('<?php echo $row_alat['id_brg']; ?>')">-</button>
                                         <button class="btn btn-outline-primary" type="button" onclick="incrementQuantity('<?php echo $row_alat['id_brg']; ?>')">+</button>
                                     </div>
                                     <div class="d-flex flex-row justify-content-between">
                                         <button type="submit" name="add_to_cart" class="btn btn-success">Tambah</button>
-                                        <a href="home.php" class="btn btn-danger">Kembali</a>                                       
+                                        <a href="home.php" class="btn btn-danger">Kembali</a>
                                     </div>
 
                                 <?php endif; ?>
