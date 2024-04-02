@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $id_barang_array = $_POST['id_brg'];
     $quantitas_array = $_POST['quantity'];
     $tgl_booking = date('Y-m-d H:i:s');
-    $tgl_pinjam = $_POST['tgl_pinjam'];    
+    $tgl_pinjam = $_POST['tgl_pinjam'];
 
     $mysqli->autocommit(FALSE);
 
@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Melakukan pengulangan melalui array ID barang dan jumlah barang
         for ($i = 0; $i < count($id_barang_array); $i++) {
-            $id_barang = $id_barang_array[$i]; 
+            $id_barang = $id_barang_array[$i];
             $quantity = $quantitas_array[$i];
 
             // Mengambil detail barang dari database berdasarkan ID barang
@@ -37,7 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 exit();
             }
 
-             // Jika jumlah yang diminta dalam batas stok yang tersedia, lanjutkan eksekusi peminjaman
+            // Jika jumlah yang diminta dalam batas stok yang tersedia, lanjutkan eksekusi peminjaman
             $insertPeminjaman->execute();
         }
 

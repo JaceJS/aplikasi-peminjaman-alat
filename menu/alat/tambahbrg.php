@@ -75,10 +75,10 @@ if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
                 ?>
               </select>
             </div>
-            <div class="mb-4">
+            <!-- <div class="mb-4">
               <label for="stokBarang" class="form-label">Stok Alat</label>
               <input type="number" class="form-control" id="stokBarang" name="stok_brg" placeholder="Masukkan stok alat" required>
-            </div>
+            </div> -->
             <div class="mb-4">
               <label for="kode" class="form-label">Kode Alat</label>
               <input type="text" class="form-control" id="kode" name="kode" placeholder="Masukkan kode alat" required>

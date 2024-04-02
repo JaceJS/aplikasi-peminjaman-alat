@@ -41,10 +41,7 @@ $role = $_SESSION['role'];
         <div class="row">
             <?php
             // Kode sql untuk menghitung total stok dan mendapatkan daftar jenis alat
-            $sql = "SELECT barang.foto, jenis_barang.id_jenis,jenis_barang.nama AS nama_jenis, SUM(barang.stok_brg) AS total_stok
-            FROM jenis_barang
-            LEFT JOIN barang ON jenis_barang.id_jenis = barang.jenis_brg
-            GROUP BY jenis_barang.id_jenis";
+            $sql = "SELECT * FROM jenis_barang";
 
             $result = mysqli_query($mysqli, $sql);
 
@@ -56,9 +53,9 @@ $role = $_SESSION['role'];
                         <div class="mb-4">
                             <div class="card mx-auto" style="width: 18rem;">
                                 <div class="card-body">
-                                    <h5 class="card-title text-center"><?php echo $row['nama_jenis']; ?></h5>
-                                    <img src="images/barang/<?php echo $row['foto']; ?>" width="200px" height="200px" class="card-img-top" alt="foto_barang">
-                                    <p class="card-text">Stok: <?php echo $row['total_stok']; ?></p>
+                                    <h5 class="card-title text-center"><?php echo $row['nama']; ?></h5>
+                                    <img src="images/jenis_barang/<?php echo $row['foto']; ?>" width="200px" height="200px" class="card-img-top" alt="foto_barang">
+                                    <!-- <p class="card-text">Stok: <?php echo $row['total_stok']; ?></p> -->
                                     <div class="d-flex justify-content-between">
                                         <a href="homedetail.php?id_jenis=<?php echo $row['id_jenis']; ?>" class="btn btn-primary">Selengkapnya</a>
                                     </div>

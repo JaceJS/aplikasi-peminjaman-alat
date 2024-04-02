@@ -1,8 +1,8 @@
 <?php
-$host = "localhost:3307";
+$host = "localhost";
 $username = "root";
-$password = "";
-$db = "pemin_alat";
+$password = "root";
+$db = "peminjaman_db";
 
 $mysqli = new mysqli($host, $username, $password, $db);
 

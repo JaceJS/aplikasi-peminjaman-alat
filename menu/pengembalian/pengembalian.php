@@ -68,7 +68,6 @@ if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
                       <th>Nama Peminjam</th>
                       <th>Tanggal Pinjam</th>
                       <th>Tanggal Kembali</th>
-                      <th>Catatan</th>
                       <th>Tindakan</th>
                     </tr>
                   </thead>
@@ -129,7 +128,6 @@ if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
                           }
                           ?>
                         </td>
-                        <td><?php echo $lihat['catatan']; ?></td>
                         <td>
                           <form action="hapuspengembalian.php?id_pengembalian=<?php echo $lihat['id_pengembalian']; ?>" onsubmit="return confirm('Yakin ingin hapus <?php echo $lihat['nama_brg']; ?>?');" method="POST">
                             <a href="editpengembalian.php?id_pengembalian=<?php echo $lihat['id_pengembalian']; ?>" class="btn btn-warning">Edit</a>

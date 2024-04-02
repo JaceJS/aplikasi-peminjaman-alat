@@ -42,36 +42,35 @@ $role = $_SESSION['role'];
             <?php
             $id_brg = $_GET['id_jenis'];
 
-            $sql = $mysqli->query("SELECT * FROM barang 
+            $sql = $mysqli->query("SELECT barang.* FROM barang 
             LEFT JOIN jenis_barang 
             ON barang.jenis_brg = jenis_barang.id_jenis 
             WHERE barang.jenis_brg = $id_brg");
 
             while ($row_alat = mysqli_fetch_array($sql)) {
-                $foto = $row_alat['foto'];
             ?>
                 <form class="col-md-6 col-lg-4" method="POST" action="prosestambahkecart.php">
                     <input type="hidden" name="id_brg" value="<?php echo $row_alat['id_brg']; ?>">
                     <input type="hidden" name="id_anggota" value="<?php echo $id_user; ?>">
                     <div class="mb-4">
                         <div class="card mx-auto" style="width: 18rem;">
-                            <img src="images/barang/<?php echo $foto; ?>" width="200px" height="200px" class="card-img-top" alt="foto_barang">
+                            <img src="images/barang/<?php echo $row_alat['foto']; ?>" width="200px" height="200px" class="card-img-top" alt="foto_barang">
                             <div class="card-body">
                                 <h5 class="card-title"><?php echo $row_alat['nama_brg']; ?></h5>
-                                <p class="card-text">Stok: <?php echo $row_alat['stok_brg']; ?></p>
+                                <p class="card-text">Kode: <?php echo $row_alat['kode']; ?></p>
+                                <!-- <p class="card-text">Stok: <?php echo $row_alat['stok_brg']; ?></p> -->
                                 <?php if ($role == 'anggota' && $row_alat['stok_brg'] > 0) :
                                 ?>
-                                    <div class="input-group mb-3">
+                                    <!-- <div class="input-group mb-3">
                                         <span class="input-group-text">Jumlah :</span>
                                         <input type="number" name="kuantitas" value="0" min="0" max="<?php echo $row_alat['stok_brg']; ?>" class="form-control bg-light" id="quantity_<?php echo $row_alat['id_brg']; ?>" readonly>
                                         <button class="btn btn-outline-danger" type="button" onclick="decrementQuantity('<?php echo $row_alat['id_brg']; ?>')">-</button>
                                         <button class="btn btn-outline-primary" type="button" onclick="incrementQuantity('<?php echo $row_alat['id_brg']; ?>')">+</button>
-                                    </div>
-                                    <div class="d-flex flex-row justify-content-between">
+                                    </div> -->
+                                    <div class="d-flex mt-4 flex-row justify-content-center">
                                         <button type="submit" name="add_to_cart" class="btn btn-success">Tambah</button>
-                                        <a href="home.php" class="btn btn-danger">Kembali</a>
+                                        <!-- <a href="home.php" class="btn btn-danger">Kembali</a> -->
                                     </div>
-
                                 <?php endif; ?>
                             </div>
                         </div>
@@ -86,7 +85,7 @@ $role = $_SESSION['role'];
     <script src="bootstrap/bootstrap-v5.bundle.min.js"></script>
     <script src="bootstrap/jquery/jquery.min.js"></script>
     <script src="bootstrap/bootstrap.bundle.min.js"></script>
-    <script>
+    <!-- <script>
         function decrementQuantity(productId) {
             var quantityInput = document.getElementById('quantity_' + productId);
             if (parseInt(quantityInput.value) > 1) {
@@ -101,7 +100,7 @@ $role = $_SESSION['role'];
             }
 
         }
-    </script>
+    </script> -->
 
 </body>
 

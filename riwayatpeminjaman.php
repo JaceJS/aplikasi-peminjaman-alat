@@ -52,10 +52,10 @@ $result = $mysqli->query($query);
                             <th class="bg-primary text-light" scope="col">Nama Peminjam</th>
                             <th class="bg-primary text-light" scope="col">Kode Alat</th>
                             <th class="bg-primary text-light" style="min-width: 100px" scope="col">Nama Alat</th>
-                            <th class="bg-primary text-light" scope="col">Kuantitas</th>
+                            <!-- <th class="bg-primary text-light" scope="col">Kuantitas</th> -->
                             <th class="bg-primary text-light" style="min-width: 170px" scope="col">Tanggal Pinjam</th>
                             <th class="bg-primary text-light" style="min-width: 170px" scope="col">Tanggal Kembali</th>
-                            <th class="bg-primary text-light" scope="col">Catatan</th>
+                            <!-- <th class="bg-primary text-light" scope="col">Catatan</th> -->
                             <th class="bg-primary text-light" scope="col">Status Peminjaman</th>
                             <th class="bg-primary text-light" scope="col">Status Pengembalian</th>
                             <th class="bg-primary text-light" scope="col">Aksi</th>
@@ -91,7 +91,7 @@ $result = $mysqli->query($query);
                                     <?php echo $barang['nama_brg']; ?>
                                 </td>
 
-                                <td><?php echo $row['kuantitas']; ?></td>
+                                <!-- <td><?php echo $row['kuantitas']; ?></td> -->
 
                                 <td>
                                     <?php
@@ -129,7 +129,7 @@ $result = $mysqli->query($query);
                                     ?>
                                 </td>
 
-                                <td><?php echo $row['catatan']; ?></td>
+                                <!-- <td><?php echo $row['catatan']; ?></td> -->
                                 <td>
                                     <?php if ($row['status_peminjaman'] == 0) { ?>
                                         <span class="btn btn-sm btn-info disabled">Booking</span>

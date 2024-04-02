@@ -1,5 +1,5 @@
 <?php
-define('BASE_URL', 'http://localhost/web_pinjam');
+define('BASE_URL', 'http://web-pinjam.test');
 
 $current_page = basename($_SERVER['PHP_SELF']);
 ?>

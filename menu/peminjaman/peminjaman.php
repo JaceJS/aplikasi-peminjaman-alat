@@ -72,8 +72,8 @@ if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
                       <th>Nama Alat</th>
                       <th>Nama Peminjam</th>
                       <th style="min-width: 170px">Tanggal Pinjam</th>
-                      <th>Kuantitas</th>                      
-                      <th>Catatan</th>
+                      <!-- <th>Kuantitas</th> -->
+                      <!-- <th>Catatan</th> -->
                       <th>Pengajuan Kembali</th>
                       <th>Status Pengembalian</th>
                       <th>Tindakan</th>
@@ -173,8 +173,8 @@ if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
                           }
                           ?>
                         </td>
-                        <td><?php echo $lihat['kuantitas']; ?></td>
-                        <td><?php echo $lihat['catatan']; ?></td>
+                        <!-- <td><?php echo $lihat['kuantitas']; ?></td> -->
+                        <!-- <td><?php echo $lihat['catatan']; ?></td> -->
 
                         <td class="d-flex flex-row">
                           <?php if ($lihat['status'] == 0 && $lihat['status_pengajuan'] == 'Diajukan') { ?>

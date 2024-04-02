@@ -67,12 +67,12 @@ if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
                       <th>Jenis Alat</th>
                       <th>Kode Alat</th>
                       <th>Foto</th>
-                      <th>Stok Alat</th>
+                      <!-- <th>Stok Alat</th> -->
                       <th>Tindakan</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <?php                  
+                    <?php
                     $query = $mysqli->query("SELECT barang.*, jenis_barang.nama AS nama_jenis FROM barang LEFT JOIN jenis_barang ON barang.jenis_brg = jenis_barang.id_jenis ORDER BY barang.kode ASC");
                     $no = 1;
                     while ($lihat = mysqli_fetch_array($query)) {
@@ -94,7 +94,7 @@ if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
                           }
                           ?>
                         </td>
-                        <td><?php echo $lihat['stok_brg']; ?></td>
+                        <!-- <td><?php echo $lihat['stok_brg']; ?></td> -->
                         <td>
                           <form action="hapusbrg.php?id_brg=<?php echo $lihat['id_brg']; ?>" onsubmit="return confirm('Yakin ingin hapus <?php echo $lihat['nama_brg']; ?>?');" method="POST">
                             <a href="editbrg.php?id_brg=<?php echo $lihat['id_brg']; ?>" class="btn btn-warning">Edit</a>

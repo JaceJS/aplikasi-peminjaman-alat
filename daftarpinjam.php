@@ -43,7 +43,7 @@ $role = $_SESSION['role'];
                                 <th class="bg-primary text-white" scope="col">No</th>
                                 <th class="bg-primary text-white" scope="col">Kode Alat</th>
                                 <th class="bg-primary text-white" scope="col">Nama Alat</th>
-                                <th class="bg-primary text-white" scope="col">Kuantitas</th>
+                                <!-- <th class="bg-primary text-white" scope="col">Kuantitas</th> -->
                                 <th class="bg-primary text-white" scope="col">Tanggal Pengambilan</th>
                                 <th class="bg-primary text-white" scope="col">Aksi</th>
                             </tr>
@@ -69,7 +69,7 @@ $role = $_SESSION['role'];
                                     <th scope="row"><?php echo $counter++; ?></th>
                                     <td><?php echo $session_item['kode']; ?></td>
                                     <td><?php echo $session_item['nama_brg']; ?></td>
-                                    <td class="input-group">
+                                    <td class="input-group d-none">
                                         <div class="d-flex align-items-center">
                                             <input type="hidden" name="id_brg[]" value="<?php echo $session_item['id_brg']; ?>">
                                             <input class="form-control" style="min-width:100px; border-radius: 4px 0 0 4px;" type="number" id="quantity_<?php echo $session_item['id_brg']; ?>" name="quantity[]" value="<?php echo $session_item['kuantitas']; ?>" min="1" max="<?php echo $max_quantity; ?>" readonly>
