@@ -79,14 +79,19 @@ if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
             </div>
 
             <div class="mb-4" style="max-width: 180px">
+              <label for="tgl_booking" class="form-label">Tanggal Booking</label>
+              <input type="datetime-local" name="tgl_booking" id="tgl_booking" class="form-control" required>
+            </div>
+
+            <div class="mb-4" style="max-width: 180px">
               <label for="tgl_pinjam" class="form-label">Tanggal Peminjaman</label>
               <input type="datetime-local" name="tgl_pinjam" id="tgl_pinjam" class="form-control" required>
             </div>
 
-            <div class="mb-4" style="max-width: 180px">
+            <!-- <div class="mb-4" style="max-width: 180px">
               <label for="kuantitas" class="form-label">Kuantitas</label>
               <input type="number" value="1" min="1" class="form-control" id="kuantitas" name="kuantitas" placeholder="Masukkan kuantitas" required>
-            </div>
+            </div> -->
 
             <!-- <div class="mb-4">
               <label for="catatan" class="form-label">Catatan</label>

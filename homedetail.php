@@ -65,19 +65,28 @@ $role = $_SESSION['role'];
                                 <h5 class="card-title"><?php echo $row_alat['nama_brg']; ?></h5>
                                 <p class="card-text">Kode: <?php echo $row_alat['kode']; ?></p>
                                 <!-- <p class="card-text">Stok: <?php echo $row_alat['stok_brg']; ?></p> -->
-                                <?php if ($role == 'anggota' && $row_alat['stok_brg'] > 0) :
+                                <?php
+                                if ($role == 'anggota' && $row_alat['stok_brg'] > 0) {
                                 ?>
+
                                     <!-- <div class="input-group mb-3">
                                         <span class="input-group-text">Jumlah :</span>
                                         <input type="number" name="kuantitas" value="0" min="0" max="<?php echo $row_alat['stok_brg']; ?>" class="form-control bg-light" id="quantity_<?php echo $row_alat['id_brg']; ?>" readonly>
                                         <button class="btn btn-outline-danger" type="button" onclick="decrementQuantity('<?php echo $row_alat['id_brg']; ?>')">-</button>
                                         <button class="btn btn-outline-primary" type="button" onclick="incrementQuantity('<?php echo $row_alat['id_brg']; ?>')">+</button>
                                     </div> -->
-                                    <div class="d-flex mt-4 flex-row justify-content-center">
+                                    <div class="d-flex mt-4 flex-row justify-content-between">
+                                        <span class="fw-bold text-primary">Tersedia</span>
                                         <button type="submit" name="add_to_cart" class="btn btn-success">Tambah</button>
                                         <!-- <a href="home.php" class="btn btn-danger">Kembali</a> -->
                                     </div>
-                                <?php endif; ?>
+                                <?php } else { ?>
+                                    <div class="d-flex mt-4 flex-row justify-content-between">
+                                        <span class="fw-bold text-danger">Tidak tersedia</span>
+                                        <!-- <button type="submit" name="add_to_cart" class="btn btn-success">Tambah</button> -->
+                                        <!-- <a href="home.php" class="btn btn-danger">Kembali</a> -->
+                                    </div>
+                                <?php  } ?>
                             </div>
                         </div>
                     </div>

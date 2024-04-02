@@ -75,12 +75,10 @@ while ($lihat = mysqli_fetch_array($query)) {
     $pdf->Cell(15, 10, $no++, 1);
     $pdf->Cell(45, 10, $lihat['nama_brg'], 1);
     $pdf->Cell(50, 10, $lihat['nama'], 1);
-    $pdf->Cell(50, 10, date('d-M-Y',strtotime($lihat['tgl_pinjam'])), 1);
-    $pdf->Cell(50, 10, date('d-M-Y',strtotime($lihat['tgl_kembali'])), 1);    
+    $pdf->Cell(50, 10, date('d-M-Y  h:i A', strtotime($lihat['tgl_pinjam'])), 1);
+    $pdf->Cell(50, 10, date('d-M-Y  h:i A', strtotime($lihat['tgl_kembali'])), 1);
     $pdf->Ln();
 }
 
 // Output PDF ke browser atau simpan ke file
 $pdf->Output('D', $filename);
-
-?>
