@@ -21,7 +21,7 @@ if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
 
   <link href="../../bootstrap/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="../../bootstrap/dashboard.min.css" rel="stylesheet">
-  <link href="../../bootstrap/bootstrap-v5.min.css" rel="stylesheet"> 
+  <link href="../../bootstrap/bootstrap-v5.min.css" rel="stylesheet">
 </head>
 
 <body id="page-top">
@@ -52,16 +52,20 @@ if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
               <input type="text" class="form-control" id="username" name="username" placeholder="Masukkan nama" required autofocus>
             </div>
             <div class="mb-4">
-                <label for="divisi" class="form-label">Divisi</label>
-                <br>                                 
-                <select name="divisi" id="divisi" class="form-select" aria-label="Default select example" required>
-                    <option selected value="">Pilih Divisi</option>
-                    <option value="Divisi Kerja Program">Divisi Kerja Program</option>
-                    <option value="Divisi Kerja Media Baru">Divisi Kerja Media Baru</option>
-                    <option value="Divisi Kerja Berita">Divisi Kerja Berita</option>
-                    <option value="Divisi Kerja Teknik">Divisi Kerja Teknik</option>
-                    <option value="Divisi Kerja Umum">Divisi Kerja Umum</option>
-                </select>
+              <label for="password" class="form-label">Password</label>
+              <input type="password" class="form-control" id="password" name="password" placeholder="Masukkan password" required>
+            </div>
+            <div class="mb-4">
+              <label for="divisi" class="form-label">Divisi</label>
+              <br>
+              <select name="divisi" id="divisi" class="form-select" aria-label="Default select example" required>
+                <option selected value="">Pilih Divisi</option>
+                <option value="Divisi Kerja Program">Divisi Kerja Program</option>
+                <option value="Divisi Kerja Media Baru">Divisi Kerja Media Baru</option>
+                <option value="Divisi Kerja Berita">Divisi Kerja Berita</option>
+                <option value="Divisi Kerja Teknik">Divisi Kerja Teknik</option>
+                <option value="Divisi Kerja Umum">Divisi Kerja Umum</option>
+              </select>
             </div>
             <div class="mb-4">
               <label for="phone" class="form-label">Nomor Telepon</label>
@@ -72,7 +76,7 @@ if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
               <button type="submit" class="btn btn-success mt-3 mr-3">Tambah</button>
               <a href="peminjam.php">
                 <button type="button" class="btn btn-danger mt-3">Kembali</button>
-              </a>            
+              </a>
             </div>
           </form>
 
@@ -90,6 +94,6 @@ if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
   </a>
 
   <script src="../../bootstrap/jquery/jquery.min.js"></script>
-  <script src="../../bootstrap/bootstrap.bundle.min.js"></script>  
+  <script src="../../bootstrap/bootstrap.bundle.min.js"></script>
   <script src="../../bootstrap/dashboard.min.js"></script>
 </body>

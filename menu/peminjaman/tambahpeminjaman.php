@@ -20,7 +20,7 @@ if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
   <title>Peminjaman</title>
 
   <link href="../../bootstrap/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-  <link href="../../bootstrap/dashboard.min.css" rel="stylesheet"> 
+  <link href="../../bootstrap/dashboard.min.css" rel="stylesheet">
   <link href="../../bootstrap/bootstrap-v5.min.css" rel="stylesheet">
 </head>
 
@@ -48,39 +48,39 @@ if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
 
           <form action="prosestambahpeminjaman.php" method="post" enctype="multipart/form-data">
             <div class="mb-4">
-                <label for="barang" class="form-label">Alat</label>
-                <br>                                 
-                <select name="barang" id="barang" class="form-select" aria-label="Default select example" required>
-                    <option selected value="">Pilih Alat</option>
-                    <?php                    
-                    $query = $mysqli->query("SELECT * from barang");
-                    while ($data = mysqli_fetch_array($query)) {
-                    ?>
-                    <option value="<?php echo $data['id_brg']?>"><?php echo $data['nama_brg'] ?></option>
-                    <?php 
-                    } 
-                    ?>
-                </select>
+              <label for="barang" class="form-label">Alat</label>
+              <br>
+              <select name="barang" id="barang" class="form-select" aria-label="Default select example" required>
+                <option selected value="">Pilih Alat</option>
+                <?php
+                $query = $mysqli->query("SELECT * from barang");
+                while ($data = mysqli_fetch_array($query)) {
+                ?>
+                  <option value="<?php echo $data['id_brg'] ?>"><?php echo $data['nama_brg'] ?></option>
+                <?php
+                }
+                ?>
+              </select>
             </div>
             <div class="mb-4">
-                <label for="peminjam" class="form-label">Nama Peminjam</label>
-                <br>                                 
-                <select name="peminjam" id="peminjam" class="form-select" aria-label="Default select example" required>
-                    <option selected value="">Pilih Peminjam</option>
-                    <?php                    
-                    $query = $mysqli->query("SELECT * from anggota");
-                    while ($data = mysqli_fetch_array($query)) {
-                    ?>
-                    <option value="<?php echo $data['id_anggota']?>"><?php echo $data['nama'] ?></option>
-                    <?php 
-                    } 
-                    ?>
-                </select>
+              <label for="peminjam" class="form-label">Nama Peminjam</label>
+              <br>
+              <select name="peminjam" id="peminjam" class="form-select" aria-label="Default select example" required>
+                <option selected value="">Pilih Peminjam</option>
+                <?php
+                $query = $mysqli->query("SELECT * from anggota");
+                while ($data = mysqli_fetch_array($query)) {
+                ?>
+                  <option value="<?php echo $data['id_anggota'] ?>"><?php echo $data['nama'] ?></option>
+                <?php
+                }
+                ?>
+              </select>
             </div>
 
             <div class="mb-4" style="max-width: 180px">
-              <label for="tgl_pinjam" class="form-label">Tanggal Peminjaman</label>                                      
-              <input type="datetime-local" name="tgl_pinjam" id="tgl_pinjam" class="form-control" required>                           
+              <label for="tgl_pinjam" class="form-label">Tanggal Peminjaman</label>
+              <input type="datetime-local" name="tgl_pinjam" id="tgl_pinjam" class="form-control" required>
             </div>
 
             <div class="mb-4" style="max-width: 180px">
@@ -88,16 +88,16 @@ if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
               <input type="number" value="1" min="1" class="form-control" id="kuantitas" name="kuantitas" placeholder="Masukkan kuantitas" required>
             </div>
 
-            <div class="mb-4">
+            <!-- <div class="mb-4">
               <label for="catatan" class="form-label">Catatan</label>
               <textarea class="form-control" id="catatan" name="catatan" rows="4" placeholder="Masukkan Catatan" required></textarea>
-            </div>
+            </div> -->
 
             <div class="d-flex">
               <button type="submit" class="btn btn-success mt-3 mr-3">Tambah</button>
               <a href="peminjaman.php">
                 <button type="button" class="btn btn-danger mt-3">Kembali</button>
-              </a>            
+              </a>
             </div>
           </form>
 
@@ -115,6 +115,6 @@ if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
   </a>
 
   <script src="../../bootstrap/jquery/jquery.min.js"></script>
-  <script src="../../bootstrap/bootstrap.bundle.min.js"></script>  
+  <script src="../../bootstrap/bootstrap.bundle.min.js"></script>
   <script src="../../bootstrap/dashboard.min.js"></script>
 </body>

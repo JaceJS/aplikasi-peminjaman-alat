@@ -35,12 +35,18 @@ $role = $_SESSION['role'];
 <body style="min-height: 100vh; background: linear-gradient(to bottom right, #4a90e2, #6fa4e7, #8cb9ec, #a8cfe1, #c5e5e6);">
     <?php include 'templates/homenavbar.php'; ?>
 
-    <h2 class="text-center mb-5 fw-bold">Daftar Alat</h2>
+    <?php
+    $id_brg = $_GET['id_jenis'];
+    $sql_nama_jenis = $mysqli->query("SELECT * FROM jenis_barang WHERE id_jenis = $id_brg");
+    $row_nama_jenis = mysqli_fetch_array($sql_nama_jenis);
+    ?>
+
+    <h2 class="text-center mb-5 fw-bold"><?php echo $row_nama_jenis['nama'] ?></h2>
 
     <div class="container">
         <div class="row">
             <?php
-            $id_brg = $_GET['id_jenis'];
+
 
             $sql = $mysqli->query("SELECT barang.* FROM barang 
             LEFT JOIN jenis_barang 
