@@ -57,6 +57,12 @@ if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
 
             $query_data_dipinjam = $mysqli->query("SELECT count(status) as a FROM peminjaman WHERE status = 0 AND status_peminjaman = 1");
             $data_dipinjam = mysqli_fetch_assoc($query_data_dipinjam);
+
+            $query_data_jenis_barang = $mysqli->query("SELECT jenis_barang.*, COUNT(barang.id_brg) AS jumlah_barang
+            FROM jenis_barang
+            INNER JOIN barang ON barang.jenis_brg = jenis_barang.id_jenis
+            GROUP BY jenis_barang.nama, jenis_barang.foto, jenis_barang.id_jenis");
+            // $data_jenis_barang = mysqli_fetch_assoc($query_data_jenis_barang);
             ?>
             <!-- Card -->
             <div class="col-xl-6 col-md-6 mb-4">
@@ -100,8 +106,27 @@ if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
                 </div>
               </a>
             </div>
-
-
+          </div>
+          <div class="row">
+            <?php
+            while ($data_jenis_barang = mysqli_fetch_assoc($query_data_jenis_barang)) {
+            ?>
+              <a href="menu/alat/alat.php">
+                <div class="col-md-6 col-lg-4">
+                  <div class="mb-4">
+                    <div class="card mx-auto" style="width: 18rem;">
+                      <div class="card-body">
+                        <h5 class="card-title text-center fw-bold"><?php echo $data_jenis_barang['nama']; ?></h5>
+                        <img src="images/jenis_barang/<?php echo $data_jenis_barang['foto']; ?>" width="200px" height="200px" class="card-img-top" alt="foto_barang">
+                        <h4 class="card-text text-dark">Jumlah Alat: <?php echo $data_jenis_barang['jumlah_barang']; ?></h4>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            <?php
+            }
+            ?>
           </div>
         </div>
 
