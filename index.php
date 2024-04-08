@@ -42,7 +42,6 @@ header("Content-Security-Policy: base-uri 'self'; script-src 'self' 'unsafe-inli
                                 APLIKASI
                                 PEMINJAMAN
                                 ALAT
-                                SYUTING
                             </h5>
                             <hr>
                             <h3 class="mb-5">STAFF</h3>

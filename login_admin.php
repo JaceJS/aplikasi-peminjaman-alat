@@ -42,7 +42,6 @@ if (isset($_SESSION['user_id'])) {
                                 APLIKASI
                                 PEMINJAMAN
                                 ALAT
-                                SYUTING
                             </h5>
                             <hr>
                             <h3 class="mb-5">ADMIN</h3>

@@ -1,7 +1,7 @@
 {
-    "name": "Peminjaman Alat Syuting TVRI",
+    "name": "Peminjaman Alat",
     "short_name": "Pinjam Alat",
-    "description": "Aplikasi Peminjaman Alat Syuting TVRI untuk mempermudah proses peminjaman peralatan syuting televisi.",
+    "description": "Aplikasi Peminjaman Alat untuk mempermudah proses peminjaman peralatan.",
     "start_url": "/",
     "display": "standalone",
     "background_color": "#ffffff",
