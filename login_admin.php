@@ -36,22 +36,22 @@ if (isset($_SESSION['user_id'])) {
                                         <path d="M304 128a80 80 0 1 0 -160 0 80 80 0 1 0 160 0zM96 128a128 128 0 1 1 256 0A128 128 0 1 1 96 128zM49.3 464H398.7c-8.9-63.3-63.3-112-129-112H178.3c-65.7 0-120.1 48.7-129 112zM0 482.3C0 383.8 79.8 304 178.3 304h91.4C368.2 304 448 383.8 448 482.3c0 16.4-13.3 29.7-29.7 29.7H29.7C13.3 512 0 498.7 0 482.3z" />
                                     </svg>
                                 </div> -->
-                                <img src="images/logo.png" width="100px" alt="logo">                                
+                                <img src="images/logo.svg" width="100px" alt="logo">
                             </div>
                             <h5 class="fw-bold">
-                                APLIKASI 
-                                PEMINJAMAN 
-                                ALAT 
+                                APLIKASI
+                                PEMINJAMAN
+                                ALAT
                                 SYUTING
                             </h5>
-                            <hr>                            
+                            <hr>
                             <h3 class="mb-5">ADMIN</h3>
                             <?php
                             if (isset($_SESSION['login_error'])) {
                                 echo $_SESSION['login_error'];
                                 unset($_SESSION['login_error']);
                             }
-                            
+
                             if (isset($_SESSION['validation_error'])) {
                                 echo $_SESSION['validation_error'];
                                 unset($_SESSION['validation_error']);
@@ -59,7 +59,7 @@ if (isset($_SESSION['user_id'])) {
                             ?>
                             <form action="prosesloginadmin.php" method="post">
                                 <div class="form-outline">
-                                    <input type="text" name="username" id="username" class="form-control" required autofocus/>
+                                    <input type="text" name="username" id="username" class="form-control" required autofocus />
                                     <label class="form-label" for="username">Username</label>
                                 </div>
                                 <div class="form-outline">

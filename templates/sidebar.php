@@ -1,5 +1,5 @@
 <?php
-define('BASE_URL', 'http://web-pinjam.test');
+define('BASE_URL', 'https://web-pinjam.test');
 
 $current_page = basename($_SERVER['PHP_SELF']);
 ?>
@@ -9,7 +9,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
     <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?php echo BASE_URL; ?>">
         <div class="sidebar-brand-icon">
-            <img src="<?php echo BASE_URL; ?>/images/logo.png" width="80px" alt="logo">
+            <img src="<?php echo BASE_URL; ?>/images/logo.svg" width="80px" alt="logo">
         </div>
         <div class="sidebar-brand-text mx-3">Admin</div>
     </a>

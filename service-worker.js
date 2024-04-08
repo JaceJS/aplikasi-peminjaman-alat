@@ -5,7 +5,7 @@ self.addEventListener('install', event => {
         'index.php',
         'index.css',
         'bootstrap/bootstrap-v5.min.css',
-        'images/logo.png'
+        'images/logo.svg'
       ]).catch(error => {
         console.error('Error adding resources to cache:', error);
       });

@@ -36,7 +36,7 @@ header("Content-Security-Policy: base-uri 'self'; script-src 'self' 'unsafe-inli
                     <div class="card shadow-2-strong" style="background-color: rgba(255, 255, 255, 0.3); border-radius: 1rem;">
                         <div class="card-body px-sm-5 py-sm-4 p-3 text-center">
                             <div class="mb-3 d-flex align-items-center justify-content-center">
-                                <img src="images/logo.png" width="100px" alt="logo">
+                                <img src="images/logo.svg" width="100px" alt="logo">
                             </div>
                             <h5 class="fw-bold">
                                 APLIKASI
